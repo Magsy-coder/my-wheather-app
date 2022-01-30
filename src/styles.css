@@ -66,3 +66,7 @@ a {
 #current-location {
   text-transform: capitalize;
 }
+#gitHub-reference {
+  display: block;
+  position: center;
+}
