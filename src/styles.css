@@ -70,8 +70,15 @@ a {
   display: block;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  font-size: normal;
+  color: #198754;
+}
+a {
+  text-decoration: none;
+  color: #198754;
   font-weight: bolder;
 }
-link.hover {
+a:hover {
   color: #ffcab0;
 }
