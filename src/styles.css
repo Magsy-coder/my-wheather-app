@@ -82,3 +82,7 @@ a {
 a:hover {
   color: #ffcab0;
 }
+#weather-icon {
+  max-height: 25%;
+  max-width: 25%;
+}

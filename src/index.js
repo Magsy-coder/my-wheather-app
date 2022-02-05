@@ -1,5 +1,5 @@
-function formatDate() {
-  let now = new Date();
+function formatDate(datestamp) {
+  let now = new Date(datestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -35,26 +35,30 @@ function formatDate() {
   ];
   let year = now.getFullYear();
   let month = months[now.getMonth()];
-
   let currentDate = document.querySelector("#current-date");
   currentDate.innerHTML = `${date}/${month}/${year}`;
-  let currentTime = document.querySelector("#current-time");
-  currentTime.innerHTML = `${day} ${hours}.${minutes}`;
+  return `${day} ${hours}.${minutes}`;
 }
-formatDate();
 
 function showTemperature(response) {
   let currentLocation = document.querySelector("#current-location");
-  currentLocation.innerHTML = response.data.name;
   let currentTemperature = Math.round(response.data.main.temp);
   let currentWheather = document.querySelector("#current-temp");
-  currentWheather.innerHTML = `Currently ${currentTemperature}°C`;
   let currentWind = Math.round(response.data.wind.speed);
   let localWind = document.querySelector("#local-wind");
-  localWind.innerHTML = `Wind speed: ${currentWind}km/h`;
   let currentDescription = response.data.weather[0].description;
   let localDescription = document.querySelector("#local-description");
+  let currentTime = document.querySelector("#current-time");
+  let iconElement = document.querySelector("weather-icon");
+  currentLocation.innerHTML = response.data.name;
   localDescription.innerHTML = `${currentDescription}`;
+  currentWheather.innerHTML = `Currently ${currentTemperature}°C`;
+  localWind.innerHTML = `Wind speed: ${currentWind}km/h`;
+  currentTime.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showWeather(yourLocation) {
