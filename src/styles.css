@@ -70,6 +70,10 @@ a {
   height: 40px;
   width: 40px;
 }
+.units {
+  color: #ffebbb;
+  text-decoration: none;
+}
 #link {
   display: block;
   text-align: center;
@@ -84,13 +88,13 @@ a {
   color: #198754;
   font-weight: bolder;
 }
-a:hover {
+.gitHubLink:hover {
   color: #ffcab0;
 }
-.units {
-  color: #ffebbb;
-  text-decoration: none;
+
+ul {
+  list-style: none;
 }
-.units .active {
-  color: #ffcab0;
+li {
+  margin-top: 5px;
 }
