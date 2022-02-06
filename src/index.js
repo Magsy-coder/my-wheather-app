@@ -51,7 +51,7 @@ function showTemperature(response) {
   let currentDescription = response.data.weather[0].description;
   let localDescription = document.querySelector("#local-description");
   let currentTime = document.querySelector("#current-time");
-  let iconElement = document.querySelector("weather-icon");
+  let iconElement = document.querySelector("#weather-icon");
   currentLocation.innerHTML = response.data.name;
   localDescription.innerHTML = `${currentDescription}`;
   temperatureElement.innerHTML = `Currently ${currentTemperature}`;
@@ -93,13 +93,16 @@ function showFahrenheitTemp(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  let temperatureFahrenheitValue = Math.round(fahrenheitTemperature);
+  temperatureElement.innerHTML = `Currently ${temperatureFahrenheitValue}`;
 }
 function showCelsiusTemp(event) {
-  preventDefault(event);
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement = celsiusTemperature;
+  let temperatureCelsiusValue = Math.round(celsiusTemperature);
+  temperatureElement.innerHTML = `Currently ${temperatureCelsiusValue}`;
 }
+
 celsiusTemperature = null;
 
 let currentButton = document.querySelector("#current-button");

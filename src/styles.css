@@ -66,6 +66,10 @@ a {
 #current-location {
   text-transform: capitalize;
 }
+#weather-icon {
+  height: 40px;
+  width: 40px;
+}
 #link {
   display: block;
   text-align: center;
@@ -74,7 +78,8 @@ a {
   font-size: normal;
   color: #198754;
 }
-a {
+
+.gitHubLink {
   text-decoration: none;
   color: #198754;
   font-weight: bolder;
@@ -82,7 +87,10 @@ a {
 a:hover {
   color: #ffcab0;
 }
-#weather-icon {
-  max-height: 25%;
-  max-width: 25%;
+.units {
+  color: #ffebbb;
+  text-decoration: none;
+}
+.units .active {
+  color: #ffcab0;
 }
