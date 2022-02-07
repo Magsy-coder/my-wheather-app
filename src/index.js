@@ -94,11 +94,14 @@ function showFahrenheitTemp(event) {
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#current-temp");
   celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("passive");
   let temperatureFahrenheitValue = Math.round(fahrenheitTemperature);
   temperatureElement.innerHTML = `Currently ${temperatureFahrenheitValue}`;
 }
 function showCelsiusTemp(event) {
   let temperatureElement = document.querySelector("#current-temp");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("passive");
   let temperatureCelsiusValue = Math.round(celsiusTemperature);
   temperatureElement.innerHTML = `Currently ${temperatureCelsiusValue}`;
 }
